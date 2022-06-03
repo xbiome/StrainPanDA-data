@@ -2,6 +2,8 @@
 
 ## NOTE！All the shell scripts or R codes (in htmls), should be run under the SimStr environment
 
+$PATH_SimStr_folder: the path of folder containing SimStr scripts. See [here](https://github.com/xbiome/StrainPanDA/tree/main/SimStr#install-and-activate-the-environment) for the example.
+
 
 
 ## Supporting evaluation files:
@@ -22,7 +24,7 @@ Under each folder:
 Example to generate strainpanda evaluation
 
 ```sh
-time Rscript ../../../SimStr/SIM_evaluate_unifrac_denovo.R \
+time Rscript $PATH_SimStr_folder/SIM_evaluate_unifrac_denovo.R \
   bench_tb=simulation_matrix/benchmark_comp_2str_all_str_prof.csv \
   method_anno_tb=../Ecoli_sim_all_csv/strainpanda_csv/panphlan_2str_1x_pWGS_Escherichia-coli-202009.xstrain_str_anno_prof.csv \
   denovo_ref=StrainPanDA_ref_str_list.txt tree_nwk=Ecoli99_parsnp.tree \
@@ -32,7 +34,7 @@ time Rscript ../../../SimStr/SIM_evaluate_unifrac_denovo.R \
 Example to generate strainest evaluation
 
 ```sh
-time Rscript ../../../SimStr/SIM_evaluate_unifrac_denovo.R \
+time Rscript $PATH_SimStr_folder/SIM_evaluate_unifrac_denovo.R \
   bench_tb=simulation_matrix/benchmark_comp_2str_all_str_prof.csv \
   method_anno_tb=../Ecoli_sim_all_csv/strainest_tsv/strainest_2str_1x_pWGS.tsv \
   denovo_ref=StrainEst_ref_str_list.txt \
@@ -43,7 +45,7 @@ time Rscript ../../../SimStr/SIM_evaluate_unifrac_denovo.R \
 Example to generate pstrain evaluation
 
 ```sh
-time Rscript ../../../SimStr/SIM_evaluate_unifrac_denovo.R \
+time Rscript $PATH_SimStr_folder/SIM_evaluate_unifrac_denovo.R \
   bench_tb=simulation_matrix/benchmark_comp_2str_all_str_prof.csv \
   method_anno_tb=../Ecoli_sim_all_csv/pstrain_csv/pstrain_2str_1x_pWGS.csv denovo_ref=StrainEst_ref_str_list.txt \
   tree_nwk=Ecoli99_parsnp.tree \
@@ -58,19 +60,19 @@ time Rscript ../../../SimStr/SIM_evaluate_unifrac_denovo.R \
 
 Fig2A: 
  - Working directory: [Ecoli_sim_all_eval](Ecoli_sim_all_eval)
- - Command: `sh run_Fig2A.sh ../../../SimStr/ 2>run_Fig2A.log`
+ - Command: `sh run_Fig2A.sh $PATH_SimStr_folder/ 2>run_Fig2A.log`
  - Results: [eval_results/Fig2A_sJSD](Ecoli_sim_all_eval/eval_results/Fig2A_sJSD)
  - Main output: [All_groups_abun_stackplot_by_method_ordered.pdf](Ecoli_sim_all_eval/eval_results/Fig2A_sJSD/All_groups_abun_stackplot_by_method_ordered.pdf)
 
 Fig2B:
  - Working directory: [Ecoli_sim_all_eval](Ecoli_sim_all_eval)
- - Command: `sh run_Fig2B.sh ../../../SimStr/ 2>run_Fig2B.log`
+ - Command: `sh run_Fig2B.sh $PATH_SimStr_folder/ 2>run_Fig2B.log`
  - Results: [eval_results/Fig2B_sJSD](Ecoli_sim_all_eval/eval_results/Fig2B_sJSD)
  - Main output: [All_groups_sJSD_boxplot.pdf](Ecoli_sim_all_eval/eval_results/Fig2B_sJSD/All_groups_sJSD_boxplot.pdf), [All_groups_sJSD_y01_boxplot.pdf](Ecoli_sim_all_eval/eval_results/Fig2B_sJSD/All_groups_sJSD_y01_boxplot.pdf) and [All_groups_sJSD_yauto_boxplot.pdf](Ecoli_sim_all_eval/eval_results/Fig2B_sJSD/All_groups_sJSD_yauto_boxplot.pdf)
 
 Fig2C:
  - Working directory: [Sync6_all_eval](Sync6_all_eval)
- - Command: `sh run_Fig2C.sh ../../../SimStr/ 2>run_Fig2C.log`
+ - Command: `sh run_Fig2C.sh $PATH_SimStr_folder/ 2>run_Fig2C.log`
  - Results: [eval_results/Fig2C_sJSD](Sync6_all_eval/eval_results/Fig2C_sJSD)
  - Main output: [All_groups_sJSD_boxplot.pdf](Sync6_all_eval/eval_results/Fig2C_sJSD/All_groups_sJSD_boxplot.pdf), [All_groups_sJSD_y01_boxplot.pdf](Sync6_all_eval/eval_results/Fig2C_sJSD/All_groups_sJSD_y01_boxplot.pdf) and [All_groups_sJSD_yauto_boxplot.pdf](Sync6_all_eval/eval_results/Fig2C_sJSD/All_groups_sJSD_yauto_boxplot.pdf)
  - Statistical tests: [Fig2C_sJSD_4str_sJSD_matr.txt_significantPair.txt](Sync6_all_eval/eval_results/Fig2C_sJSD/Fig2C_sJSD_4str_sJSD_matr.txt_significantPair.txt)
@@ -125,14 +127,14 @@ FigC:
 
 Supplementary Figure 2A: 
  - Working directory: [Ecoli_sim_all_eval](Ecoli_sim_all_eval)
- - Command: `sh run_FigS2A.sh ../../../SimStr/ 2>run_FigS2A.log`
+ - Command: `sh run_FigS2A.sh $PATH_SimStr_folder/ 2>run_FigS2A.log`
  - Results: [eval_results/FigS2A_sJSD](Ecoli_sim_all_eval/eval_results/FigS2A_sJSD)
  - Main output: [All_groups_sJSD_boxplot.pdf](Ecoli_sim_all_eval/eval_results/FigS2A_sJSD/All_groups_sJSD_boxplot.pdf), [All_groups_sJSD_y01_boxplot.pdf](Ecoli_sim_all_eval/eval_results/FigS2A_sJSD/All_groups_sJSD_y01_boxplot.pdf), [All_groups_sJSD_y01_boxplot.pdf](Ecoli_sim_all_eval/eval_results/FigS2A_sJSD/All_groups_sJSD_y01_boxplot.pdf)
  - Statistical tests: [significant_pT_merge.txt](Ecoli_sim_all_eval/eval_results/FigS2A_sJSD/significant_pT_merge.txt)
 
 Supplementary Figure 2B: 
  - Working directory: [Ecoli_sim_all_eval](Ecoli_sim_all_eval)
- - Command: `sh run_FigS2B.sh ../../../SimStr/ 2>run_FigS2B.log`
+ - Command: `sh run_FigS2B.sh $PATH_SimStr_folder/ 2>run_FigS2B.log`
  - Results: [eval_results/FigS2B_MCC](Ecoli_sim_all_eval/eval_results/FigS2B_MCC)
  - Main output: [All_groups_MCC_boxplot.pdf](Ecoli_sim_all_eval/eval_results/FigS2B_MCC/All_groups_MCC_boxplot.pdf), [All_groups_MCC_y01_boxplot.pdf](Ecoli_sim_all_eval/eval_results/FigS2B_MCC/All_groups_MCC_y01_boxplot.pdf), [All_groups_MCC_yauto_boxplot.pdf](Ecoli_sim_all_eval/eval_results/FigS2B_MCC/All_groups_MCC_yauto_boxplot.pdf)
  - Statistical tests: [significant_pT_merge.txt](Ecoli_sim_all_eval/eval_results/FigS2B_MCC/significant_pT_merge.txt)
@@ -141,7 +143,7 @@ Supplementary Figure 2B:
 
 Supplementary Figure 3A: 
  - Working directory: [Ecoli_sim_all_eval](Ecoli_sim_all_eval)
- - Command: `sh run_FigS3A.sh ../../../SimStr/ 2>run_FigS3A.log`
+ - Command: `sh run_FigS3A.sh $PATH_SimStr_folder/ 2>run_FigS3A.log`
  - Results: [eval_results/FigS3A_sJSD](Ecoli_sim_all_eval/eval_results/FigS3A_sJSD)
  - Main output: [All_groups_sJSD_boxplot.pdf](Ecoli_sim_all_eval/eval_results/FigS3A_sJSD/All_groups_sJSD_boxplot.pdf), [All_groups_sJSD_y01_boxplot.pdf](Ecoli_sim_all_eval/eval_results/FigS3A_sJSD/All_groups_sJSD_y01_boxplot.pdf), [All_groups_sJSD_yauto_boxplot.pdf](Ecoli_sim_all_eval/eval_results/FigS3A_sJSD/All_groups_sJSD_yauto_boxplot.pdf)
  - Statistical tests: [significant_pT_merge.txt](Ecoli_sim_all_eval/eval_results/FigS3A_sJSD/significant_pT_merge.txt)
@@ -149,7 +151,7 @@ Supplementary Figure 3A:
 Supplementary Figure 3B: 
 
  - Working directory: [Ecoli_sim_all_eval](Ecoli_sim_all_eval)
- - Command: `sh run_FigS3B.sh ../../../SimStr/ 2>run_FigS3B.log`
+ - Command: `sh run_FigS3B.sh $PATH_SimStr_folder/ 2>run_FigS3B.log`
  - Results: [eval_results/FigS3B_MCC](Ecoli_sim_all_eval/eval_results/FigS3B_MCC)
  - Main output: [All_groups_MCC_boxplot.pdf](Ecoli_sim_all_eval/eval_results/FigS3B_MCC/All_groups_MCC_boxplot.pdf), [All_groups_MCC_y01_boxplot.pdf](Ecoli_sim_all_eval/eval_results/FigS3B_MCC/All_groups_MCC_y01_boxplot.pdf), [All_groups_MCC_yauto_boxplot.pdf](Ecoli_sim_all_eval/eval_results/FigS3B_MCC/All_groups_MCC_yauto_boxplot.pdf)
  - Statistical tests: [significant_pT_merge.txt](Ecoli_sim_all_eval/eval_results/FigS3B_MCC/significant_pT_merge.txt)
@@ -158,8 +160,8 @@ Supplementary Figure 3B:
 
  - Working directory: [Ecoli_sim_all_eval](Ecoli_sim_all_eval)
  - Command: 
-   - left panel: `sh run_FigS4AL.sh ../../../SimStr/ 2>run_FigS4AL.log ; sh run_FigS4BL.sh ../../../SimStr/ 2>run_FigS4BL.log ; sh run_FigS4CL.sh ../../../SimStr/ 2>run_FigS4CL.log`
-   - right panel: `sh run_FigS4AR.sh ../../../SimStr/ 2>run_FigS4AR.log ; sh run_FigS4BR.sh ../../../SimStr/ 2>run_FigS4BR.log ; sh run_FigS4CR.sh ../../../SimStr/ 2>run_FigS4CR.log`
+   - left panel: `sh run_FigS4AL.sh $PATH_SimStr_folder/ 2>run_FigS4AL.log ; sh run_FigS4BL.sh $PATH_SimStr_folder/ 2>run_FigS4BL.log ; sh run_FigS4CL.sh $PATH_SimStr_folder/ 2>run_FigS4CL.log`
+   - right panel: `sh run_FigS4AR.sh $PATH_SimStr_folder/ 2>run_FigS4AR.log ; sh run_FigS4BR.sh $PATH_SimStr_folder/ 2>run_FigS4BR.log ; sh run_FigS4CR.sh $PATH_SimStr_folder/ 2>run_FigS4CR.log`
  -  Results: 
    -  left panel: [eval_results/FigS4AL_sJSD](Ecoli_sim_all_eval/eval_results/FigS4AL_sJSD), [eval_results/FigS4BL_sJSD](Ecoli_sim_all_eval/eval_results/FigS4BL_sJSD), [eval_results/FigS4CL_sJSD](Ecoli_sim_all_eval/eval_results/FigS4CL_sJSD)
    -  right panel: [eval_results/FigS4AR_MCC](Ecoli_sim_all_eval/eval_results/FigS4AR_MCC), [eval_results/FigS4BR_MCC](Ecoli_sim_all_eval/eval_results/FigS4BR_MCC), [eval_results/FigS4CR_MCC](Ecoli_sim_all_eval/eval_results/FigS4CR_MCC)
